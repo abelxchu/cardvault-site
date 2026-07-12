@@ -22,7 +22,7 @@ ICON_B64=$(base64 -i "$TMP_ICON")
 rm -f "$TMP_ICON"
 
 export BRAND ICON_B64
-for PAGE in *.html; do
+while IFS= read -r PAGE; do
   python3 - "$PAGE" <<'PY'
 import os, re, sys
 
@@ -54,4 +54,4 @@ s = re.sub(
 open(page, "w", encoding="utf-8").write(s)
 print(f"已同步 {page}:名稱「{brand}」+ App icon")
 PY
-done
+done < <(find . -name "*.html")
