@@ -1,181 +1,77 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>技術支援 — 名片夾 CardVault</title>
-  <meta name="description" content="「名片夾」（CardVault）技術支援：常見問題與聯絡方式。">
+  <title>CardVault</title>
+  <meta name="description" content="CardVault: an offline business card scanner — your data stays on your phone.">
   <style>
     :root {
-      --brand-deep: #16224a;
-      --brand: #3557a8;
-      --brand-mid: #4f74c9;
-      --brand-light: #7fb0e6;
-      --tint: #eef2fb;
-      --ink: #14182a;
-      --muted: #5b6178;
-      --hairline: #e2e7f5;
-      --bg: #ffffff;
-      --hero-text: #eef2fb;
-      --hero-muted: #aebbe0;
+      --brand-deep: #16224a; --brand: #3557a8; --brand-light: #7fb0e6;
+      --tint: #eef2fb; --ink: #14182a; --muted: #5b6178; --hairline: #e2e7f5;
+      --bg: #ffffff; --hero-text: #eef2fb; --hero-muted: #aebbe0; --card: #ffffff;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --brand-deep: #0c1224;
-        --brand: #7fa6e8;
-        --brand-mid: #6f93d6;
-        --brand-light: #9dc6f2;
-        --tint: #161d38;
-        --ink: #eef1fa;
-        --muted: #a6acc4;
-        --hairline: #262f52;
-        --bg: #0c1224;
-        --hero-text: #eef2fb;
-        --hero-muted: #8f9dc7;
+        --brand-deep: #0c1224; --brand: #7fa6e8; --brand-light: #9dc6f2;
+        --tint: #161d38; --ink: #eef1fa; --muted: #a6acc4; --hairline: #262f52;
+        --bg: #0c1224; --hero-text: #eef2fb; --hero-muted: #8f9dc7; --card: #141d33;
       }
     }
     * { box-sizing: border-box; }
-    html { -webkit-text-size-adjust: 100%; }
     body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC",
-                   "Noto Sans TC", "Hiragino Sans", "Microsoft JhengHei", sans-serif;
-      line-height: 1.9;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
+      margin: 0; background: var(--bg); color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.7; -webkit-font-smoothing: antialiased;
     }
-    .band { padding: 0 24px; }
-    .container { max-width: 960px; margin: 0 auto; }
-    .narrow { max-width: 680px; margin: 0 auto; }
-
-    /* ---- Hero ---- */
-    .hero { background: var(--brand-deep); color: var(--hero-text); padding-top: 40px; padding-bottom: 64px; }
-    .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; }
-    .app-badge {
-      display: inline-flex; align-items: center; gap: 12px;
-      font-weight: 700; font-size: 19px;
-    }
+    .hero { background: var(--brand-deep); color: var(--hero-text); padding: 40px 24px 72px; }
+    .container { max-width: 720px; margin: 0 auto; }
+    .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 64px; }
+    .app-badge { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 19px; }
     .app-badge img { width: 40px; height: 40px; border-radius: 10px; display: block; }
     .lang-switch {
-      font-size: 14px; font-weight: 600; color: var(--hero-muted);
-      text-decoration: none; border: 1px solid currentColor; border-radius: 999px;
-      padding: 5px 14px; opacity: 0.9;
+      font-size: 14px; font-weight: 600; color: var(--hero-muted); text-decoration: none;
+      border: 1px solid currentColor; border-radius: 999px; padding: 5px 14px; opacity: 0.9;
     }
-    .lang-switch:hover { opacity: 1; }
-    .hero .label {
-      font-size: 15px; font-weight: 600; letter-spacing: 0.08em;
-      color: var(--hero-muted); margin: 0 0 10px;
-    }
-    .hero h1 {
-      font-size: clamp(30px, 5.4vw, 44px); line-height: 1.35;
-      margin: 0 0 18px; font-weight: 500; letter-spacing: 0.01em;
-    }
+    .hero h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.25; margin: 0 0 16px; font-weight: 500; }
     .hero h1 strong { font-weight: 800; }
-    .hero .sub { font-size: 16px; color: var(--hero-muted); margin: 0; }
-
-    /* ---- FAQ ---- */
-    .faq { padding: 64px 0 8px; }
-    .faq h2 {
-      font-size: 15px; font-weight: 600; letter-spacing: 0.08em;
-      color: var(--brand); margin: 0 0 8px;
+    .hero p { font-size: 17px; color: var(--hero-muted); margin: 0; max-width: 480px; }
+    .links { max-width: 720px; margin: -40px auto 0; padding: 0 24px 64px; display: grid; gap: 16px; }
+    @media (min-width: 560px) { .links { grid-template-columns: 1fr 1fr; } }
+    .nav-card {
+      background: var(--card); border: 1px solid var(--hairline); border-radius: 16px;
+      padding: 24px; text-decoration: none; color: var(--ink); display: block;
     }
-    .qa { padding: 24px 0; border-bottom: 1px solid var(--hairline); }
-    .qa:last-child { border-bottom: none; }
-    .qa h3 { font-size: 19px; font-weight: 700; margin: 0 0 8px; letter-spacing: 0.01em; }
-    .qa p { margin: 0; color: var(--muted); }
-    .qa p strong { color: var(--ink); }
-
-    /* ---- 聯絡（深色收尾帶）---- */
-    .band.deep {
-      background: var(--brand-deep); color: var(--hero-text);
-      margin-top: 72px; padding-top: 64px; padding-bottom: 64px; text-align: center;
-    }
-    .band.deep h2 { margin: 0 0 10px; color: var(--hero-text); font-size: 24px; }
-    .band.deep p { margin: 0; color: var(--hero-muted); }
-    .band.deep a { color: var(--hero-text); text-decoration: underline; text-underline-offset: 3px; }
-
-    footer {
-      text-align: center; color: var(--muted); font-size: 14px;
-      padding: 36px 24px 48px;
-    }
-    footer .links { margin-bottom: 8px; }
-    footer a { color: var(--brand); text-decoration: none; font-weight: 600; }
-    footer a:hover { text-decoration: underline; }
+    .nav-card:hover { border-color: var(--brand); }
+    .nav-card .k { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--brand); margin: 0 0 6px; text-transform: uppercase; }
+    .nav-card h2 { font-size: 20px; font-weight: 700; margin: 0 0 6px; }
+    .nav-card p { font-size: 14px; color: var(--muted); margin: 0; }
+    footer { text-align: center; color: var(--muted); font-size: 14px; padding: 8px 24px 48px; }
   </style>
 </head>
 <body>
-
-  <div class="band hero">
+  <div class="hero">
     <div class="container">
       <div class="hero-top">
         <div class="app-badge"><img id="app-icon" src="data:image/png;base64,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" alt=""><span class="app-name">名片夾 CardVault</span></div>
-        <a class="lang-switch" href="en/support.html">EN</a>
+        <a class="lang-switch" href="../">中文</a>
       </div>
-      <p class="label">技術支援</p>
-      <h1>需要協助？<br>先看看<strong>常見問題</strong></h1>
-      <p class="sub">找不到答案，歡迎直接來信，我會盡快回覆。</p>
+      <h1>Business cards, <strong>digitized</strong><br>and kept on your phone</h1>
+      <p>Offline scanning and recognition. No account, no upload, no tracking — your contacts stay entirely yours.</p>
     </div>
   </div>
-
-  <div class="band">
-    <div class="narrow faq">
-      <h2>常見問題</h2>
-
-      <div class="qa">
-        <h3>使用名片夾需要註冊或登入嗎？</h3>
-        <p>不需要。打開就能用，沒有帳號、不必填 Email。</p>
-      </div>
-
-      <div class="qa">
-        <h3>我的名片資料會上傳到雲端嗎？</h3>
-        <p>不會。所有名片內容與正反面影像都只儲存在你的 iPhone 上，不會上傳到任何伺服器，開發者也無法存取。詳見<a href="privacy.html">隱私權政策</a>。</p>
-      </div>
-
-      <div class="qa">
-        <h3>掃描名片需要連網路嗎？</h3>
-        <p>不需要。文字辨識（OCR）與欄位解析全部在你的裝置上離線完成，飛航模式也能用。</p>
-      </div>
-
-      <div class="qa">
-        <h3>支援哪些語言的名片？</h3>
-        <p>目前支援繁體中文、英文、日文名片的離線辨識。</p>
-      </div>
-
-      <div class="qa">
-        <h3>辨識結果有錯字或欄位分錯怎麼辦？</h3>
-        <p>存檔前可以逐欄檢查與修改；已建立的名片也能隨時進入編輯頁調整。</p>
-      </div>
-
-      <div class="qa">
-        <h3>怎麼把名片存進 iPhone 通訊錄？</h3>
-        <p>進入該張名片的詳情頁，選「加入 iPhone 聯絡人」即可；也可以在設定頁整批匯出 vCard／CSV 備份。</p>
-      </div>
-
-      <div class="qa">
-        <h3>換手機的話，資料會不會不見？</h3>
-        <p>目前名片資料儲存在本機，換機或重裝前請先用「匯出備份（vCard／CSV）」保存。多裝置 iCloud 同步已列入未來規劃。</p>
-      </div>
-
-      <div class="qa">
-        <h3>掃描相機打不開，或畫面全黑？</h3>
-        <p>請確認已在系統「設定」中允許本 App 的相機權限。文件掃描相機需在實體 iPhone 上使用；若在模擬器測試，請改用「從相簿匯入」。</p>
-      </div>
-    </div>
+  <div class="links">
+    <a class="nav-card" href="privacy.html">
+      <p class="k">Privacy</p>
+      <h2>Privacy Policy</h2>
+      <p>How we do (not) handle your data.</p>
+    </a>
+    <a class="nav-card" href="support.html">
+      <p class="k">Support</p>
+      <h2>Support</h2>
+      <p>FAQ and how to reach us.</p>
+    </a>
   </div>
-
-  <div class="band deep">
-    <div class="narrow">
-      <h2>還是需要協助？</h2>
-      <p>歡迎來信，附上你遇到的狀況與（可選）截圖<br><a href="mailto:abelhu.tw@gmail.com">abelhu.tw@gmail.com</a></p>
-    </div>
-  </div>
-
-  <footer>
-    <div class="links"><a href="privacy.html">隱私權政策</a> · <a href="index.html">首頁</a></div>
-    © 2026 <span class="app-name">名片夾 CardVault</span>
-  </footer>
-
+  <footer>© 2026 <span class="app-name">名片夾 CardVault</span></footer>
 </body>
 </html>
