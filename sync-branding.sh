@@ -11,7 +11,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-APP_DIR="$HOME/Developer/business-card-app"   # App 專案已從 Desktop 搬到 ~/Developer;用絕對路徑不怕再搬
+APP_DIR="$HOME/Developer/CardVault"   # App 專案資料夾(business-card-app → CardVault);網站已搬進 CardVault/cardvault-site/
 ICON_SRC="$APP_DIR/CardVault/Assets.xcassets/AppIcon.appiconset/AppIcon.png"
 DISPLAY_NAME=$(grep 'CFBundleDisplayName:' "$APP_DIR/project.yml" | sed 's/.*CFBundleDisplayName: *//' | tr -d '"')
 PROJECT_NAME=$(grep '^name:' "$APP_DIR/project.yml" | sed 's/^name: *//' | tr -d '"')
