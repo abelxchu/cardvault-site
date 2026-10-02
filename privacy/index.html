@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="zh-Hant" data-title-en="Privacy Policy · CardVault">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隱私權政策 · 名片夾 CardVault</title>
+<script>(function(){var q,l;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(q==='en'||q==='zh'){localStorage.setItem('cardvault_lang',q);}l=localStorage.getItem('cardvault_lang');}catch(e){l=q;}if(!l){l=(navigator.language||'').toLowerCase().indexOf('zh')===0?'zh':'en';}document.documentElement.lang=(l==='en')?'en':'zh-Hant';})();</script>
+<meta name="description" content="名片夾（CardVault）隱私權政策：名片資料保存於你的裝置，免帳號、無伺服器、無追蹤；名片辨識（含 Apple Intelligence）全程在裝置上完成。">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../icon.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="site ruled" id="siteHeader">
+  <div class="wrap nav">
+    <a href="../" class="logo"><img src="../icon.png" alt=""><span class="app-name" data-lang-zh>名片夾 CardVault</span><span class="app-name" data-lang-en>CardVault</span></a>
+    <div class="nav-right">
+      <a class="btn btn-dark btn-getapp" href="https://apps.apple.com/app/id6790775244">
+        <svg class="apple" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="txt" data-lang-zh>取得 App</span><span class="txt" data-lang-en>Get the app</span>
+      </a>
+      <button class="btn btn-ghost btn-menu" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="txt" data-lang-zh>選單</span><span class="txt" data-lang-en>Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu-scrim" id="menuScrim"></div>
+<div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-head">
+    <span data-lang-zh>選單</span><span data-lang-en>Menu</span>
+    <button class="menu-x" id="menuClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="../"><span data-lang-zh>總覽</span><span data-lang-en>Overview</span></a>
+    <a href="../#features"><span data-lang-zh>功能</span><span data-lang-en>Features</span></a>
+    <a href="../#screens"><span data-lang-zh>畫面一覽</span><span data-lang-en>Screenshots</span></a>
+    <a href="../#pricing"><span data-lang-zh>定價</span><span data-lang-en>Pricing</span></a>
+    <a href="../changelog/"><span data-lang-zh>更新紀錄</span><span data-lang-en>Changelog</span></a>
+  </nav>
+  <div class="menu-foot">
+    <div class="menu-foot-links">
+      <a href="../support/"><span data-lang-zh>支援</span><span data-lang-en>Support</span></a>
+      <a href="../privacy/"><span data-lang-zh>隱私權</span><span data-lang-en>Privacy</span></a>
+      <a href="mailto:abelhu.tw@gmail.com"><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact</span></a>
+    </div>
+    <button class="lang" data-lang-zh onclick="setLang('en')">English</button>
+    <button class="lang" data-lang-en onclick="setLang('zh')">中文</button>
+  </div>
+</div>
+
+<div class="wrap doc-head">
+  <div class="eyebrow" data-lang-zh>隱私權政策</div><div class="eyebrow" data-lang-en>Privacy Policy</div>
+  <h1><span data-lang-zh>你的名片資料，<br>僅保存於你的裝置。</span><span data-lang-en>Your card data stays<br>on your device.</span></h1>
+  <p><span data-lang-zh>最後更新日期：2026 年 10 月 2 日</span><span data-lang-en>Last updated: October 2, 2026</span></p>
+</div>
+
+<div class="wrap">
+  <article class="doc">
+
+    <div data-lang-zh>
+      <p class="lede">本隱私權政策（以下簡稱「本政策」）說明「名片夾」（CardVault，以下簡稱「本 App」）如何處理您的資料。</p>
+      <p>本 App 的核心設計原則為：您所掃描的名片資料，保存於您自己的裝置之中。本 App 不要求註冊帳號、未設置任何開發者伺服器；名片辨識（包含 Apple Intelligence 裝置端 AI）全程於您的裝置上完成。僅在您主動開啟「iCloud 同步」時，名片資料才會同步至您個人的 iCloud（Apple 帳號）——存放於您自己的私人雲端空間，開發者無法存取。</p>
+      <div class="summary-card">
+        <b>重點摘要</b>
+        <ul>
+          <li><strong>免註冊使用</strong>：無需建立帳號或登入，開發者不持有任何與您相關的帳號資料。</li>
+          <li><strong>裝置上辨識</strong>：文字辨識與欄位判斷（含 Apple Intelligence）均在裝置本機完成，無需網路連線。</li>
+          <li><strong>資料由您掌控</strong>：名片預設只存在您的裝置；開啟同步後也僅存於您自己的 iCloud，開發者無法讀取。</li>
+          <li><strong>無追蹤、無分析</strong>：未整合任何第三方追蹤、分析或廣告服務。</li>
+        </ul>
+      </div>
+
+      <h2>1. 使用者身份</h2>
+      <p>使用本 App 無需註冊、提供電子郵件或登入任何帳號。本 App 不會產生、蒐集或儲存任何可識別您個人身份的帳號資料。</p>
+
+      <h2>2. 名片資料之儲存</h2>
+      <p>您掃描或匯入的每一張名片——包含辨識所得之姓名、公司、職稱、電話、電子郵件、網址、地址、LINE ID、統一編號、備註，以及名片正反面之原始影像——預設僅儲存於您裝置的本機資料庫。若您開啟「iCloud 同步」，這些資料會另存一份於您個人的 iCloud 私人資料庫，供您的裝置間同步（詳見第 9 節）。</p>
+      <ul>
+        <li>上述資料<strong>不會</strong>上傳至開發者或任何第三方之伺服器。</li>
+        <li>開發者未設置後端系統或資料庫，<strong>無任何途徑</strong>存取您的名片內容。</li>
+        <li>當您自裝置移除本 App 時，本機資料將一併刪除；若曾開啟 iCloud 同步，存於您 iCloud 的資料由您透過 iOS 的 iCloud 設定管理。</li>
+      </ul>
+
+      <h2>3. 相機與照片權限</h2>
+      <p>為提供名片掃描功能，本 App 將於必要時向您請求下列系統權限：</p>
+      <ul>
+        <li><strong>相機</strong>：用於拍攝與掃描實體名片。</li>
+        <li><strong>照片</strong>：用於自相簿匯入既有之名片照片，以及將名片原圖或「我的名片」分享圖儲存至相簿。</li>
+      </ul>
+      <p>所有影像僅於您的裝置上處理與儲存，不會傳送至外部。</p>
+
+      <h2>4. 文字辨識與欄位判斷</h2>
+      <p>名片文字辨識（OCR）採用 Apple 系統內建之 Vision 框架，全程於裝置本機離線運算；您的名片影像不會為辨識目的而傳送至雲端或任何外部服務。</p>
+      <p>辨識出的文字如何分成姓名、公司、職稱等欄位，依您的裝置而定：</p>
+      <ul>
+        <li><strong>支援 Apple Intelligence 的裝置</strong>：若您的裝置支援且已開啟 Apple Intelligence，本 App 會使用 Apple 提供之<strong>裝置端</strong>語言模型（Foundation Models 框架）協助判斷姓名、公司、職稱與地址。該模型完全於您的裝置上執行，不需網路連線；名片內容不會傳送至 Apple、開發者或任何第三方。</li>
+        <li><strong>其他裝置</strong>：若裝置不支援、未開啟 Apple Intelligence，或模型尚未下載完成，則由本 App 內建之規則式解析器處理，同樣於本機完成。</li>
+      </ul>
+      <p>本 App 未使用任何雲端 AI 服務，也不會將您的名片內容用於訓練任何模型。您可於 iOS「設定」&gt;「Apple Intelligence 與 Siri」關閉 Apple Intelligence，名片辨識將改用規則式解析；App 內「設定」&gt;「名片辨識」可查看目前使用的方式。</p>
+
+      <h2>5. 匯出至通訊錄</h2>
+      <p>僅於您主動選擇「加入通訊錄」時，本 App 方會請求通訊錄權限，且僅寫入您當次選擇之名片。本 App 不會讀取、蒐集或上傳您既有之聯絡人資料。是否匯出及匯出之對象，均由您全權決定。</p>
+
+      <h2>6. 系統搜尋（Spotlight）</h2>
+      <p>為使您能透過 iPhone 系統搜尋快速尋得名片，本 App 會將名片資料建立索引至系統之 Spotlight 服務。該索引僅存在於您的裝置，由 iOS 系統管理，不會對外傳輸；已典藏的名片會自索引中移除。您可隨時於系統「設定」中關閉本 App 之「Siri 與搜尋」權限。</p>
+
+      <h2>7. 分享與備份</h2>
+      <p>本 App 提供分享圖、QR Code 及資料備份（vCard／CSV 匯出與匯入）等功能。上述功能均須由您主動觸發，並透過 iOS 標準分享面板或檔案選擇器，交由您所選擇之目的地（如訊息、AirDrop、檔案 App）處理。分享之內容與對象，均由您自行決定。</p>
+
+      <h2>8. 購買 CardVault Pro</h2>
+      <p>本 App 提供「CardVault Pro」一次性購買（非消耗性 App 內購買），用以解鎖無限名片張數。購買、付款與恢復購買全程由 Apple 的 App Store 處理；開發者不會取得您的付款資訊、Apple ID 或任何個人資料。本 App 僅透過 Apple 的 StoreKit 於您的裝置上確認購買狀態，以解鎖相應功能。</p>
+
+      <h2>9. 網路連線與第三方服務</h2>
+      <p>本 App 未串接任何開發者後端伺服器，亦未整合任何第三方之分析、廣告或追蹤服務，且不使用 Cookie。本 App 僅在下列情況使用網路，且均透過 Apple 的服務：</p>
+      <ul>
+        <li><strong>iCloud 同步（選用，預設關閉）</strong>：開啟後，本 App 會透過 Apple 的 iCloud 服務，將名片資料同步至您個人 Apple 帳號的私人 iCloud 資料庫。該資料存放於您自己的 iCloud 空間、受 Apple 的<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">隱私權政策</a>規範，開發者無法讀取或存取。您可隨時於 App 設定中開啟或關閉。</li>
+        <li><strong>App 內購買</strong>：當您購買或恢復購買 CardVault Pro 時，由 App Store 與 Apple 之伺服器連線處理（詳見第 8 節）。</li>
+      </ul>
+      <p class="note">當您點選名片上之電話、Email、地址或 LinkedIn 連結時，係由您的裝置開啟對應之系統應用程式（電話、郵件、地圖、瀏覽器）；該等互動屬於您與各該服務之間之行為，本 App 不參與亦不記錄。</p>
+
+      <h2>10. 診斷資料與意見回饋</h2>
+      <p>本 App 不主動蒐集使用數據或診斷紀錄。若您於 iOS 系統設定中啟用「與 App 開發者分享」之分析功能，Apple 可能向開發者提供不含個人身份資訊之當機報告，僅用於問題修正；該機制由 Apple 系統層級管理，您可隨時於設定中關閉。</p>
+      <p>當您在 App 內選擇「意見回饋」時，本 App 會開啟您的郵件 App 並預先填入診斷資訊（App 版本、iOS 版本、裝置類型、iCloud 同步模式與狀態、最近同步時間與錯誤代碼），<strong>不含任何名片內容</strong>。寄出前您可檢視或刪除這些內容，是否寄出由您決定；來信僅用於回覆您與修正問題。</p>
+
+      <h2>11. 兒童隱私</h2>
+      <p>本 App 係為一般大眾設計，非以兒童為主要對象，亦不會刻意蒐集兒童之個人資料。</p>
+
+      <h2>12. 未來功能</h2>
+      <p>若日後推出須將名片內容傳送至網路之功能（如雲端 AI 解析），該等功能均將比照 iCloud 同步，以使用者自主選擇啟用、預設關閉之方式提供，並於啟用前清楚說明資料處理方式，同時更新本政策。</p>
+
+      <h2>13. 本政策之修訂</h2>
+      <p>本政策將隨本 App 之更新而適時修訂。如有重大變更，將更新本頁面上方之「最後更新日期」。建議您定期查閱本頁面，以瞭解最新之隱私權保護措施。</p>
+
+      <h2>聯絡方式</h2>
+      <p>如您對本政策有任何疑問，歡迎來信 <a href="mailto:abelhu.tw@gmail.com">abelhu.tw@gmail.com</a>。</p>
+    </div>
+
+    <div data-lang-en>
+      <p class="lede">This Privacy Policy (the "Policy") explains how CardVault (the "App") handles your data.</p>
+      <p>The App is built around one core principle: the business cards you scan stay on your own device. The App requires no account and operates no developer server, and card recognition — including on-device Apple Intelligence — runs entirely on your device. Only when you actively turn on "iCloud Sync" is your card data synced to your personal iCloud (Apple account) — kept in your own private cloud space, which the developer cannot access.</p>
+      <div class="summary-card">
+        <b>At a glance</b>
+        <ul>
+          <li><strong>No account required</strong>: no sign-up or login; the developer holds no account data tied to you.</li>
+          <li><strong>On-device recognition</strong>: text recognition and field detection (including Apple Intelligence) run entirely on your device, with no network connection.</li>
+          <li><strong>Your data, your control</strong>: cards live on your device by default; with sync on, they stay in your own iCloud — the developer can't read them.</li>
+          <li><strong>No tracking, no analytics</strong>: no third-party tracking, analytics, or advertising services are integrated.</li>
+        </ul>
+      </div>
+
+      <h2>1. User Identity</h2>
+      <p>Using the App does not require registration, an email address, or logging into any account. The App does not generate, collect, or store any account data that could identify you personally.</p>
+
+      <h2>2. Storage of Business Card Data</h2>
+      <p>Every card you scan or import — including the recognized name, company, title, phone number, email, website, address, LINE ID, tax ID, notes, and the original front and back images — is stored in your device's local database by default. If you enable "iCloud Sync," a copy is also kept in your personal private iCloud database so it can sync across your devices (see Section 9).</p>
+      <ul>
+        <li>This data is <strong>never</strong> uploaded to the developer's or any third party's servers.</li>
+        <li>The developer operates no backend system or database and has <strong>no way</strong> to access your card data.</li>
+        <li>When you delete the App, its local data is removed with it; if you used iCloud Sync, the copy in your iCloud is managed by you through iOS iCloud settings.</li>
+      </ul>
+
+      <h2>3. Camera and Photo Permissions</h2>
+      <p>To provide card scanning, the App requests the following system permissions when needed:</p>
+      <ul>
+        <li><strong>Camera</strong>: to photograph and scan physical business cards.</li>
+        <li><strong>Photos</strong>: to import existing card photos from your library, and to save original card images or your "My Card" share image to your library.</li>
+      </ul>
+      <p>All images are processed and stored only on your device and are never transmitted externally.</p>
+
+      <h2>4. Text Recognition and Field Detection</h2>
+      <p>Card text recognition (OCR) uses Apple's built-in Vision framework and runs entirely offline, on-device; your card images are never sent to the cloud or any external service for recognition.</p>
+      <p>How the recognized text is sorted into fields such as name, company, and title depends on your device:</p>
+      <ul>
+        <li><strong>Devices that support Apple Intelligence</strong>: if your device supports Apple Intelligence and it is turned on, the App uses Apple's <strong>on-device</strong> language model (the Foundation Models framework) to help identify names, companies, titles, and addresses. The model runs entirely on your device with no network connection; card content is never sent to Apple, the developer, or any third party.</li>
+        <li><strong>Other devices</strong>: if your device doesn't support Apple Intelligence, it's turned off, or its model hasn't finished downloading, the App's built-in rule-based parser handles this instead — also entirely on-device.</li>
+      </ul>
+      <p>The App uses no cloud AI services and never uses your card content to train any model. You can turn off Apple Intelligence in iOS Settings &gt; Apple Intelligence &amp; Siri, and card recognition will switch to the rule-based parser; Settings &gt; Card Recognition in the App shows which method is in use.</p>
+
+      <h2>5. Exporting to Contacts</h2>
+      <p>The App requests Contacts access only when you actively choose "Add to Contacts," and it writes only the single card you selected at that time. The App never reads, collects, or uploads your existing contacts. Whether and what to export is entirely your decision.</p>
+
+      <h2>6. System Search (Spotlight)</h2>
+      <p>To let you find cards quickly through iPhone's system search, the App indexes card data with the system's Spotlight service. This index exists only on your device, is managed by iOS, and is never transmitted externally; archived cards are removed from the index. You can disable the App's "Siri &amp; Search" permission at any time in system Settings.</p>
+
+      <h2>7. Sharing and Backup</h2>
+      <p>The App provides share images, QR codes, and data backup (vCard / CSV export and import). These are always triggered by you and handed off through iOS's standard share sheet or file picker to a destination you choose (Messages, AirDrop, Files, and so on). What you share and with whom is entirely up to you.</p>
+
+      <h2>8. Purchasing CardVault Pro</h2>
+      <p>The App offers "CardVault Pro," a one-time (non-consumable) in-app purchase that unlocks unlimited cards. Purchasing, payment, and restoring purchases are handled entirely by Apple's App Store; the developer never receives your payment details, Apple ID, or any personal data. The App only checks your purchase status on your device through Apple's StoreKit to unlock the corresponding feature.</p>
+
+      <h2>9. Network Connections and Third Parties</h2>
+      <p>The App connects to no developer backend server, integrates no third-party analytics, advertising, or tracking services, and does not use cookies. It uses the network only in the following cases, all through Apple services:</p>
+      <ul>
+        <li><strong>iCloud Sync (optional, off by default)</strong>: when enabled, the App uses Apple's iCloud service to sync your card data to the private iCloud database of your personal Apple account. That data resides in your own iCloud space, is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>, and cannot be read or accessed by the developer. You can turn it on or off at any time in the App's settings.</li>
+        <li><strong>In-app purchase</strong>: when you buy or restore CardVault Pro, the App Store connects to Apple's servers to process it (see Section 8).</li>
+      </ul>
+      <p class="note">When you tap a phone number, email, address, or LinkedIn link on a card, your device opens the corresponding system app (Phone, Mail, Maps, or a browser). That interaction is between you and that service — the App does not participate in or record it.</p>
+
+      <h2>10. Diagnostic Data and Feedback</h2>
+      <p>The App does not proactively collect usage data or diagnostic logs. If you enable "Share With App Developers" analytics in iOS Settings, Apple may provide the developer with crash reports containing no personally identifiable information, used solely to fix issues. This is managed at the Apple system level, and you may disable it at any time in Settings.</p>
+      <p>When you choose "Send Feedback" in the App, it opens your mail app with diagnostic information pre-filled (App version, iOS version, device type, iCloud sync mode and status, last sync time, and error codes) — <strong>never any card content</strong>. You can review or delete it before sending, and whether to send is up to you; emails are used only to reply to you and fix issues.</p>
+
+      <h2>11. Children's Privacy</h2>
+      <p>The App is designed for a general audience, is not directed at children, and does not knowingly collect personal data from children.</p>
+
+      <h2>12. Future Features</h2>
+      <p>Should the App later introduce features that send card content over the network (such as cloud-based AI parsing), they will — like iCloud Sync — always be opt-in and off by default, with a clear explanation of how your data would be handled before you enable them, and this Policy will be updated accordingly.</p>
+
+      <h2>13. Changes to This Policy</h2>
+      <p>This Policy will be revised as the App evolves. Material changes will be reflected in the "Last updated" date above. We encourage you to review this page periodically to stay informed of our current privacy practices.</p>
+
+      <h2>Contact</h2>
+      <p>If you have any questions about this Policy, please email <a href="mailto:abelhu.tw@gmail.com">abelhu.tw@gmail.com</a>.</p>
+    </div>
+
+  </article>
+</div>
+
+<footer class="site">
+  <div class="wrap foot">
+    <a href="../" class="logo"><img src="../icon.png" alt=""><span class="app-name" data-lang-zh>名片夾 CardVault</span><span class="app-name" data-lang-en>CardVault</span></a>
+    <div class="foot-links">
+      <a href="../#features"><span data-lang-zh>功能</span><span data-lang-en>Features</span></a>
+      <a href="../#pricing"><span data-lang-zh>定價</span><span data-lang-en>Pricing</span></a>
+      <a href="../changelog/"><span data-lang-zh>更新紀錄</span><span data-lang-en>Changelog</span></a>
+      <a href="../support/"><span data-lang-zh>支援</span><span data-lang-en>Support</span></a>
+      <a href="../privacy/"><span data-lang-zh>隱私權</span><span data-lang-en>Privacy</span></a>
+      <a href="mailto:abelhu.tw@gmail.com"><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact</span></a>
+      <button class="lang" data-lang-zh onclick="setLang('en')">English</button>
+      <button class="lang" data-lang-en onclick="setLang('zh')">中文</button>
+    </div>
+    <div class="foot-copy">© 2026 XUAN-CHEN HU · <span data-lang-zh>名片夾 CardVault</span><span data-lang-en>CardVault</span></div>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

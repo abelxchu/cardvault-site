@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="zh-Hant" data-title-en="Support · CardVault">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>技術支援 · 名片夾 CardVault</title>
+<script>(function(){var q,l;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(q==='en'||q==='zh'){localStorage.setItem('cardvault_lang',q);}l=localStorage.getItem('cardvault_lang');}catch(e){l=q;}if(!l){l=(navigator.language||'').toLowerCase().indexOf('zh')===0?'zh':'en';}document.documentElement.lang=(l==='en')?'en':'zh-Hant';})();</script>
+<meta name="description" content="名片夾（CardVault）技術支援：掃描與辨識、Apple Intelligence、iCloud 同步、備份與 Pro 購買的常見問題與聯絡方式。">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../icon.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="site ruled" id="siteHeader">
+  <div class="wrap nav">
+    <a href="../" class="logo"><img src="../icon.png" alt=""><span class="app-name" data-lang-zh>名片夾 CardVault</span><span class="app-name" data-lang-en>CardVault</span></a>
+    <div class="nav-right">
+      <a class="btn btn-dark btn-getapp" href="https://apps.apple.com/app/id6790775244">
+        <svg class="apple" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="txt" data-lang-zh>取得 App</span><span class="txt" data-lang-en>Get the app</span>
+      </a>
+      <button class="btn btn-ghost btn-menu" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="txt" data-lang-zh>選單</span><span class="txt" data-lang-en>Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu-scrim" id="menuScrim"></div>
+<div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-head">
+    <span data-lang-zh>選單</span><span data-lang-en>Menu</span>
+    <button class="menu-x" id="menuClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="../"><span data-lang-zh>總覽</span><span data-lang-en>Overview</span></a>
+    <a href="../#features"><span data-lang-zh>功能</span><span data-lang-en>Features</span></a>
+    <a href="../#screens"><span data-lang-zh>畫面一覽</span><span data-lang-en>Screenshots</span></a>
+    <a href="../#pricing"><span data-lang-zh>定價</span><span data-lang-en>Pricing</span></a>
+    <a href="../changelog/"><span data-lang-zh>更新紀錄</span><span data-lang-en>Changelog</span></a>
+  </nav>
+  <div class="menu-foot">
+    <div class="menu-foot-links">
+      <a href="../support/"><span data-lang-zh>支援</span><span data-lang-en>Support</span></a>
+      <a href="../privacy/"><span data-lang-zh>隱私權</span><span data-lang-en>Privacy</span></a>
+      <a href="mailto:abelhu.tw@gmail.com"><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact</span></a>
+    </div>
+    <button class="lang" data-lang-zh onclick="setLang('en')">English</button>
+    <button class="lang" data-lang-en onclick="setLang('zh')">中文</button>
+  </div>
+</div>
+
+<div class="wrap doc-head">
+  <div class="eyebrow" data-lang-zh>支援</div><div class="eyebrow" data-lang-en>Support</div>
+  <h1><span data-lang-zh>需要幫忙嗎？</span><span data-lang-en>How can we help?</span></h1>
+  <p><span data-lang-zh>常見問題都在下面；找不到答案的話，直接來信。</span><span data-lang-en>Most answers are below — if yours isn't, just email us.</span></p>
+</div>
+
+<div class="wrap">
+  <div class="doc support">
+    <div class="contact-card">
+      <div>
+        <strong><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact us</span></strong>
+        <p><span data-lang-zh>問題回報、功能建議都歡迎；附上狀況說明與截圖會更快找到原因。</span><span data-lang-en>Bug reports and ideas are welcome — a short description and a screenshot help us find the cause faster.</span></p>
+      </div>
+      <a class="btn btn-dark" href="mailto:abelhu.tw@gmail.com?subject=%E5%90%8D%E7%89%87%E5%A4%BE%20CardVault%20%E6%94%AF%E6%8F%B4">abelhu.tw@gmail.com</a>
+    </div>
+
+    <h2 id="start"><span data-lang-zh>開始使用</span><span data-lang-en>Getting started</span></h2>
+    <div class="faq">
+      <details class="qa">
+        <summary><span><span data-lang-zh>使用名片夾需要註冊或登入嗎？</span><span data-lang-en>Do I need to register or sign in?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>不需要。打開就能用，沒有帳號、不必填 Email。</span><span data-lang-en>No. Just open the app and start — no account, no email required.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>怎麼新增名片？</span><span data-lang-en>How do I add a card?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>在主畫面右上按 <strong>＋</strong>：<br>• <strong>相機掃描</strong>：自動偵測名片邊框、校正透視，正反面可以一起掃。<br>• <strong>從照片匯入</strong>：從相簿挑已經拍好的名片照片。<br>• <strong>手動輸入</strong>：沒有實體名片時，直接填寫欄位。</span><span data-lang-en>Tap <strong>+</strong> at the top right of the main screen:<br>• <strong>Scan with Camera</strong> — detects the card's edges and corrects perspective; scan the front and back together.<br>• <strong>Import from Photos</strong> — pick a card photo you've already taken.<br>• <strong>Enter Manually</strong> — fill in the fields yourself when there's no physical card.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>可以在 iPad 上使用嗎？</span><span data-lang-en>Does it work on iPad?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>可以。名片夾為 iPhone 與 iPad 設計，需要 iOS／iPadOS 17 以上。開啟 iCloud 同步，兩台裝置的名片會自動同步。</span><span data-lang-en>Yes. CardVault is designed for iPhone and iPad and requires iOS / iPadOS 17 or later. Turn on iCloud Sync to keep cards in sync between them.</span></div>
+      </details>
+    </div>
+
+    <h2 id="recognition"><span data-lang-zh>名片辨識</span><span data-lang-en>Card recognition</span></h2>
+    <div class="faq">
+      <details class="qa">
+        <summary><span><span data-lang-zh>掃描名片需要連網路嗎？</span><span data-lang-en>Does scanning require an internet connection?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>不需要。文字辨識（OCR）與欄位判斷全部在你的裝置上離線完成，飛航模式也能用。</span><span data-lang-en>No. Text recognition (OCR) and field detection run entirely on-device — it works in Airplane Mode.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>支援哪些語言的名片？</span><span data-lang-en>Which card languages are supported?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>支援繁體中文、英文與日文名片；日文名片會自動改用日文優先辨識，假名的姓名與職稱也讀得到。</span><span data-lang-en>Traditional Chinese, English, and Japanese cards. Japanese cards automatically switch to Japanese-first recognition, so names and titles in kana are picked up too.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>什麼是「Apple Intelligence 辨識」？哪些裝置會用到？</span><span data-lang-en>What is Apple Intelligence recognition, and which devices use it?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>在支援 Apple Intelligence 的裝置上（iOS 26 以上，例如 iPhone 15 Pro 之後的機型、搭載 M1 以上晶片的 iPad），名片夾會用<strong>裝置端</strong> AI 判斷姓名、公司、職稱與地址，辨識更準確。模型在你的裝置上執行、不連網，名片內容不會傳給 Apple 或任何人。<br>App 內「設定」&gt;「名片辨識」可以看目前的狀態（可用、未開啟、模型下載中）；不支援的機型不會顯示這一列。</span><span data-lang-en>On devices that support Apple Intelligence (iOS 26 or later — for example iPhone 15 Pro and newer, or iPads with M1 or later), CardVault uses <strong>on-device</strong> AI to identify names, companies, titles, and addresses more accurately. The model runs on your device without going online, and card content is never sent to Apple or anyone else.<br>Settings &gt; Card Recognition in the app shows the current status (available, turned off, or model downloading); the row is hidden on devices that don't support it.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>我的裝置不支援 Apple Intelligence，還能用嗎？</span><span data-lang-en>My device doesn't support Apple Intelligence — can I still use it?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>可以，所有功能都一樣。名片夾會改用內建的規則式解析辨識欄位，同樣離線完成。如果裝置支援但還沒開啟，到 iOS「設定」&gt;「Apple Intelligence 與 Siri」開啟後，名片辨識就會自動改用裝置端 AI。</span><span data-lang-en>Yes — every feature works the same. CardVault uses its built-in rule-based parser instead, also fully offline. If your device supports Apple Intelligence but it's off, turn it on in iOS Settings &gt; Apple Intelligence &amp; Siri and card recognition will switch to on-device AI automatically.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>辨識結果有錯字或欄位分錯怎麼辦？</span><span data-lang-en>What if a field is recognized incorrectly?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>存檔前可以逐欄檢查與修改；已建立的名片也能隨時進入編輯頁調整，或用「重新掃描更新」重掃一次。</span><span data-lang-en>You can review and edit every field before saving, edit any saved card later, or use Rescan to Update to scan it again.</span></div>
+      </details>
+    </div>
+
+    <h2 id="organize"><span data-lang-zh>整理與分享</span><span data-lang-en>Organizing &amp; sharing</span></h2>
+    <div class="faq">
+      <details class="qa">
+        <summary><span><span data-lang-zh>典藏和刪除差在哪？</span><span data-lang-en>What's the difference between Archive and Delete?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh><strong>典藏</strong>適合過時或暫時用不到的名片：在列表向左滑，或在名片的 ⋯ 選單選「典藏」。典藏的名片不會出現在列表，但會保留、隨時可以還原，到「設定」&gt;「已典藏」查看或取消典藏。<strong>刪除</strong>則會永久移除。</span><span data-lang-en><strong>Archive</strong> is for cards you no longer need right now: swipe left in the list, or choose Archive from a card's ⋯ menu. Archived cards leave your list but are kept and can be restored anytime from Settings &gt; Archived. <strong>Delete</strong> removes a card permanently.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>怎麼一次整理好幾張？</span><span data-lang-en>How do I manage several cards at once?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>長按任一張名片就會進入多選，勾好後可以一次收藏、典藏、匯出或刪除。</span><span data-lang-en>Long-press any card to start selecting, then favorite, archive, export, or delete them together.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>怎麼把名片存進 iPhone 通訊錄？</span><span data-lang-en>How do I save a card to iPhone Contacts?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>打開該張名片，選「加入通訊錄」即可；只會寫入你選的那一張，不會動到其他聯絡人。</span><span data-lang-en>Open the card and choose Add to Contacts. Only that card is written — nothing else in your contacts is touched.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>對方需要安裝名片夾，才能掃我的 QR code 嗎？</span><span data-lang-en>Does the other person need CardVault to scan my QR code?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>不用。在「我的名片」建立自己的數位名片後出示 QR code，對方用手機內建相機一掃，就能直接把你加進聯絡人。</span><span data-lang-en>No. Create your digital card in My Card and show its QR code — anyone can scan it with their phone's built-in camera to add you to their contacts.</span></div>
+      </details>
+    </div>
+
+    <h2 id="data"><span data-lang-zh>資料與同步</span><span data-lang-en>Data &amp; sync</span></h2>
+    <div class="faq">
+      <details class="qa">
+        <summary><span><span data-lang-zh>我的名片資料會上傳到雲端嗎？</span><span data-lang-en>Is my card data uploaded to the cloud?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>預設不會。名片內容與正反面影像只儲存在你的裝置上，不會上傳到任何伺服器，開發者也無法存取。你可以選擇開啟「iCloud 同步」，讓資料存到你自己的 iCloud（仍非開發者伺服器，開發者無法讀取）。詳見<a href="../privacy/">隱私權政策</a>。</span><span data-lang-en>By default, no. Card details and front/back images are stored only on your device and are never uploaded to any server; the developer cannot access them. You can optionally turn on iCloud Sync, which keeps your data in your own iCloud (still not a developer server — the developer can't read it). See the <a href="../privacy/">Privacy Policy</a>.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>怎麼開啟 iCloud 同步？同步正常嗎？</span><span data-lang-en>How do I turn on iCloud Sync, and is it working?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>到 App 內「設定」開啟「iCloud 同步」，裝置需要登入 iCloud。同一區有「同步狀態」，會顯示最後同步時間；如果遇到上傳失敗、iCloud 空間已滿或等待網路，點開就能看到原因。</span><span data-lang-en>Turn on iCloud Sync in the app's Settings (your device needs to be signed in to iCloud). Sync Status in the same section shows the last sync time, and if something goes wrong — an upload failure, full iCloud storage, or waiting for a network — tap it to see why.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>換手機的話，資料會不會不見？</span><span data-lang-en>Will I lose my data when I switch phones?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>有開 iCloud 同步的話不會：新手機登入同一個 Apple ID、打開名片夾並開啟同步，名片就會回來。如果沒開同步，換機或重裝前請先匯出備份。</span><span data-lang-en>Not if iCloud Sync is on: sign in with the same Apple ID on the new phone, open CardVault, turn on sync, and your cards come back. If sync is off, export a backup before switching or reinstalling.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>怎麼備份或匯入名片？</span><span data-lang-en>How do I back up or import cards?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>「設定」可以匯出全部名片為 vCard 或 CSV，也能用「匯入備份」把 .vcf／.csv 匯回來，重複的名片會自動略過。vCard 不含名片照片、標籤與備註；CSV 會帶回備註與統編，但不含照片與標籤。</span><span data-lang-en>In Settings you can export all cards as vCard or CSV, and use Import Backup to bring a .vcf / .csv file back in — duplicates are skipped automatically. vCard files don't include card photos, tags, or notes; CSV restores notes and tax IDs, but not photos or tags.</span></div>
+      </details>
+    </div>
+
+    <h2 id="pro"><span data-lang-zh>CardVault Pro 與購買</span><span data-lang-en>CardVault Pro &amp; purchases</span></h2>
+    <div class="faq">
+      <details class="qa">
+        <summary><span><span data-lang-zh>免費版可以存幾張名片？</span><span data-lang-en>How many cards does the free plan hold?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>最多 15 張（已典藏的也算在內），其他功能免費版全都有。超過之後，既有名片照常讀取與匯出，只是要解鎖 Pro 才能再新增。</span><span data-lang-en>Up to 15 cards (archived cards count too), with every other feature included. Past that, your existing cards stay readable and exportable — Pro is only needed to add more.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>Pro 是訂閱嗎？多少錢？</span><span data-lang-en>Is Pro a subscription? How much is it?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>不是訂閱。CardVault Pro 是一次買斷 NT$150（各地區價格依 App Store 為準），付一次就永久有效，不會每月扣款。</span><span data-lang-en>No. CardVault Pro is a one-time purchase of NT$150 (about US$5; local prices are set by the App Store). Pay once and it's yours for good — no recurring charges.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>換手機或重裝後，要再買一次嗎？</span><span data-lang-en>Do I need to buy it again on a new phone or after reinstalling?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>不用。用購買時的同一個 Apple ID，到「設定」&gt;「名片用量」打開付費頁，按「恢復購買」即可。</span><span data-lang-en>No. Using the same Apple ID you bought it with, open the upgrade page from Settings &gt; Card usage and tap Restore Purchase.</span></div>
+      </details>
+    </div>
+
+    <h2 id="other"><span data-lang-zh>其他</span><span data-lang-en>Other</span></h2>
+    <div class="faq">
+      <details class="qa">
+        <summary><span><span data-lang-zh>掃描相機打不開，或畫面全黑？</span><span data-lang-en>The scanner camera won't open, or the screen is black?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>請到 iOS「設定」&gt;「隱私權與安全性」&gt;「相機」，確認已允許名片夾使用相機。</span><span data-lang-en>Go to iOS Settings &gt; Privacy &amp; Security &gt; Camera and make sure CardVault is allowed to use the camera.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>怎麼回報問題？</span><span data-lang-en>How do I report a problem?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>在 App「設定」選「意見回饋」，會開啟郵件並自動附上診斷資訊（App 版本、同步狀態等，不含任何名片內容），寄出前你可以檢視或刪除。也可以直接來信 <a href="mailto:abelhu.tw@gmail.com">abelhu.tw@gmail.com</a>。</span><span data-lang-en>Choose Send Feedback in the app's Settings. It opens an email with diagnostic info attached (app version, sync status, and so on — never any card content), which you can review or delete before sending. You can also email <a href="mailto:abelhu.tw@gmail.com">abelhu.tw@gmail.com</a> directly.</span></div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<footer class="site">
+  <div class="wrap foot">
+    <a href="../" class="logo"><img src="../icon.png" alt=""><span class="app-name" data-lang-zh>名片夾 CardVault</span><span class="app-name" data-lang-en>CardVault</span></a>
+    <div class="foot-links">
+      <a href="../#features"><span data-lang-zh>功能</span><span data-lang-en>Features</span></a>
+      <a href="../#pricing"><span data-lang-zh>定價</span><span data-lang-en>Pricing</span></a>
+      <a href="../changelog/"><span data-lang-zh>更新紀錄</span><span data-lang-en>Changelog</span></a>
+      <a href="../support/"><span data-lang-zh>支援</span><span data-lang-en>Support</span></a>
+      <a href="../privacy/"><span data-lang-zh>隱私權</span><span data-lang-en>Privacy</span></a>
+      <a href="mailto:abelhu.tw@gmail.com"><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact</span></a>
+      <button class="lang" data-lang-zh onclick="setLang('en')">English</button>
+      <button class="lang" data-lang-en onclick="setLang('zh')">中文</button>
+    </div>
+    <div class="foot-copy">© 2026 XUAN-CHEN HU · <span data-lang-zh>名片夾 CardVault</span><span data-lang-en>CardVault</span></div>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

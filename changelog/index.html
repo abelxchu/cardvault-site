@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="zh-Hant" data-title-en="Changelog · CardVault">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>更新紀錄 · 名片夾 CardVault</title>
+<script>(function(){var q,l;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(q==='en'||q==='zh'){localStorage.setItem('cardvault_lang',q);}l=localStorage.getItem('cardvault_lang');}catch(e){l=q;}if(!l){l=(navigator.language||'').toLowerCase().indexOf('zh')===0?'zh':'en';}document.documentElement.lang=(l==='en')?'en':'zh-Hant';})();</script>
+<meta name="description" content="名片夾 CardVault 每個版本的更新內容。">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../icon.png" type="image/png">
+<link rel="apple-touch-icon" href="../icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+
+<header class="site ruled" id="siteHeader">
+  <div class="wrap nav">
+    <a href="../" class="logo"><img src="../icon.png" alt=""><span class="app-name" data-lang-zh>名片夾 CardVault</span><span class="app-name" data-lang-en>CardVault</span></a>
+    <div class="nav-right">
+      <a class="btn btn-dark btn-getapp" href="https://apps.apple.com/app/id6790775244">
+        <svg class="apple" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="txt" data-lang-zh>取得 App</span><span class="txt" data-lang-en>Get the app</span>
+      </a>
+      <button class="btn btn-ghost btn-menu" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="txt" data-lang-zh>選單</span><span class="txt" data-lang-en>Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu-scrim" id="menuScrim"></div>
+<div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-head">
+    <span data-lang-zh>選單</span><span data-lang-en>Menu</span>
+    <button class="menu-x" id="menuClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="../"><span data-lang-zh>總覽</span><span data-lang-en>Overview</span></a>
+    <a href="../#features"><span data-lang-zh>功能</span><span data-lang-en>Features</span></a>
+    <a href="../#screens"><span data-lang-zh>畫面一覽</span><span data-lang-en>Screenshots</span></a>
+    <a href="../#pricing"><span data-lang-zh>定價</span><span data-lang-en>Pricing</span></a>
+    <a href="../changelog/"><span data-lang-zh>更新紀錄</span><span data-lang-en>Changelog</span></a>
+  </nav>
+  <div class="menu-foot">
+    <div class="menu-foot-links">
+      <a href="../support/"><span data-lang-zh>支援</span><span data-lang-en>Support</span></a>
+      <a href="../privacy/"><span data-lang-zh>隱私權</span><span data-lang-en>Privacy</span></a>
+      <a href="mailto:abelhu.tw@gmail.com"><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact</span></a>
+    </div>
+    <button class="lang" data-lang-zh onclick="setLang('en')">English</button>
+    <button class="lang" data-lang-en onclick="setLang('zh')">中文</button>
+  </div>
+</div>
+
+<div class="wrap cl-head">
+  <div class="eyebrow" data-lang-zh>更新紀錄</div><div class="eyebrow" data-lang-en>Changelog</div>
+  <h1><span data-lang-zh>每個版本，做了什麼。</span><span data-lang-en>What changed, version by version.</span></h1>
+  <p><span data-lang-zh>名片夾 CardVault 的更新內容。</span><span data-lang-en>Everything new in CardVault.</span></p>
+</div>
+
+<div class="wrap cl-body">
+  <aside class="cl-side">
+    <a href="#v-1-1-5"><b>1.1.5</b><span><span data-lang-zh>2026 年 10 月</span><span data-lang-en>October 2026</span></span></a>
+    <a href="#v-1-1-4"><b>1.1.4</b><span><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></a>
+    <a href="#v-1-1-3"><b>1.1.3</b><span><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></a>
+    <a href="#v-1-1-2"><b>1.1.2</b><span><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></a>
+    <a href="#v-1-1-1"><b>1.1.1</b><span><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></a>
+    <a href="#v-1-1"><b>1.1</b><span><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></a>
+    <a href="#v-1-0"><b>1.0</b><span><span data-lang-zh>2026 年 7 月</span><span data-lang-en>July 2026</span></span></a>
+  </aside>
+  <main class="cl-main">
+    <article class="rel" id="v-1-1-5">
+      <div class="rel-head"><h2>1.1.5</h2><span class="rel-date"><span data-lang-zh>2026 年 10 月</span><span data-lang-en>October 2026</span></span></div>
+      <p class="rel-sum"><span data-lang-zh>名片辨識精準度全面改進，支援 Apple Intelligence 的裝置改用裝置端 AI。</span><span data-lang-en>Much more accurate card recognition, with on-device AI on devices that support Apple Intelligence.</span></p>
+      <ul class="rel-list">
+        <li><span data-lang-zh>名片辨識更準確：姓名、公司、職稱的判斷全面改進，名片背面的公司名、拆成兩行的品牌名與地址也能正確辨識</span><span data-lang-en>More accurate card recognition: better detection of names, companies, and job titles, including company names on the back of a card and names or addresses split across two lines</span></li>
+        <li><span data-lang-zh>在支援 Apple Intelligence 的裝置上，會使用裝置端 AI 進一步提升辨識準確度，資料一樣不離開你的手機</span><span data-lang-en>On devices that support Apple Intelligence, on-device AI improves recognition even further, and your data still never leaves your device</span></li>
+        <li><span data-lang-zh>日文名片辨識大幅改善，假名的姓名與職稱不再漏掉</span><span data-lang-en>Much better recognition of Japanese business cards, including names and titles written in kana</span></li>
+        <li><span data-lang-zh>設定頁新增「名片辨識」，可查看 Apple Intelligence 的使用狀態</span><span data-lang-en>New Card Recognition row in Settings shows whether Apple Intelligence is in use</span></li>
+      </ul>
+    </article>
+    <article class="rel" id="v-1-1-4">
+      <div class="rel-head"><h2>1.1.4</h2><span class="rel-date"><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></div>
+      <p class="rel-sum"><span data-lang-zh>名片典藏、長按多選，以及看得到的 iCloud 同步狀態。</span><span data-lang-en>Archive cards, long-press to multi-select, and visible iCloud sync status.</span></p>
+      <ul class="rel-list">
+        <li><span data-lang-zh>新增名片典藏：過時或暫時用不到的名片，左滑即可典藏，不必刪除；可在「設定」&gt;「已典藏」查看或還原</span><span data-lang-en>New: Archive cards you no longer need—swipe left to archive instead of deleting. View or restore them in Settings &gt; Archived</span></li>
+        <li><span data-lang-zh>長按名片即可進入多選，一次整理、收藏、典藏或匯出多張名片</span><span data-lang-en>Long-press a card to start selecting, then favorite, archive, or export several cards at once</span></li>
+        <li><span data-lang-zh>設定頁新增「同步狀態」，可隨時查看 iCloud 同步是否正常</span><span data-lang-en>New Sync Status in Settings shows whether iCloud sync is working</span></li>
+        <li><span data-lang-zh>意見回饋信會自動附上診斷資訊，方便更快找出問題</span><span data-lang-en>Send Feedback now includes diagnostic info to help troubleshoot faster</span></li>
+      </ul>
+    </article>
+    <article class="rel" id="v-1-1-3">
+      <div class="rel-head"><h2>1.1.3</h2><span class="rel-date"><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></div>
+      <ul class="rel-list">
+        <li><span data-lang-zh>改善電話欄位的輸入：現在可以直接輸入連字號、空格與分機（例如 ext001），不必再另外複製貼上</span><span data-lang-en>Improved the phone field: you can now type hyphens, spaces, and extensions (e.g. ext001) directly — no more copy-pasting</span></li>
+      </ul>
+    </article>
+    <article class="rel" id="v-1-1-2">
+      <div class="rel-head"><h2>1.1.2</h2><span class="rel-date"><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></div>
+      <ul class="rel-list">
+        <li><span data-lang-zh>修正 iCloud 同步在多台裝置之間有時不會即時更新的問題</span><span data-lang-en>Fixed iCloud sync sometimes not updating across your devices</span></li>
+      </ul>
+    </article>
+    <article class="rel" id="v-1-1-1">
+      <div class="rel-head"><h2>1.1.1</h2><span class="rel-date"><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></div>
+      <ul class="rel-list">
+        <li><span data-lang-zh>修正 CardVault Pro 購買在某些情況下按下去沒有反應的問題</span><span data-lang-en>Fixed an issue where the CardVault Pro purchase could appear unresponsive</span></li>
+        <li><span data-lang-zh>修正 iPad 上「我的名片」與分享頁底部按鈕被切到的問題</span><span data-lang-en>Fixed bottom buttons being cut off on iPad for My Card and the share screen</span></li>
+      </ul>
+    </article>
+    <article class="rel" id="v-1-1">
+      <div class="rel-head"><h2>1.1</h2><span class="rel-date"><span data-lang-zh>2026 年 9 月</span><span data-lang-en>September 2026</span></span></div>
+      <p class="rel-sum"><span data-lang-zh>自訂你的名片樣式，並推出 CardVault Pro。</span><span data-lang-en>Customize your card, and introducing CardVault Pro.</span></p>
+      <ul class="rel-list">
+        <li><span data-lang-zh>「我的名片」新增卡面樣式自訂：可挑樣式、字體、配色、大頭照與排版，做出屬於你的名片風格</span><span data-lang-en>&quot;My Card&quot; now supports customization: choose a style, font, colors, photo, and layout to build your own look</span></li>
+        <li><span data-lang-zh>全新分享合成頁：一鍵把名片做成適合社群的圖片，可調外圍背景與比例，輕鬆發到貼文或限時動態</span><span data-lang-en>New share composer: turn your card into a social-ready image in one tap, with adjustable background and aspect ratio</span></li>
+        <li><span data-lang-zh>新增 CardVault Pro：一次買斷解鎖無限名片張數（免費版最多 15 張）</span><span data-lang-en>Introducing CardVault Pro: a one-time purchase that unlocks unlimited cards (the free plan holds up to 15)</span></li>
+        <li><span data-lang-zh>備份匯入支援 vCard 與 CSV</span><span data-lang-en>Backup import now supports vCard and CSV</span></li>
+      </ul>
+    </article>
+    <article class="rel" id="v-1-0">
+      <div class="rel-head"><h2>1.0</h2><span class="rel-date"><span data-lang-zh>2026 年 7 月</span><span data-lang-en>July 2026</span></span></div>
+      <p class="rel-sum"><span data-lang-zh>名片夾 CardVault 正式上架 App Store。</span><span data-lang-en>CardVault is now on the App Store.</span></p>
+      <ul class="rel-list">
+        <li><span data-lang-zh>拍一張，名片就數位化：離線 OCR 辨識姓名、公司、職稱、電話、Email、網址與地址</span><span data-lang-en>Snap a card and it&#x27;s digital: offline OCR for name, company, title, phone, email, website and address</span></li>
+        <li><span data-lang-zh>「我的名片」：建立數位名片，出示 QR code，對方一掃就加進聯絡人</span><span data-lang-en>My Card: create a digital card and share it as a QR code that adds you to their contacts</span></li>
+        <li><span data-lang-zh>讀取 QR code 名片（vCard、MECARD 與網址）</span><span data-lang-en>Scan QR-code business cards (vCard, MECARD and links)</span></li>
+        <li><span data-lang-zh>標籤、排序與篩選，清單與 Wallet 風格名片牆兩種瀏覽方式</span><span data-lang-en>Tags, sorting and filters, browsed as a list or a Wallet-style card wall</span></li>
+        <li><span data-lang-zh>從 iPhone 系統搜尋（Spotlight）直接找到名片</span><span data-lang-en>Find cards straight from iPhone system search (Spotlight)</span></li>
+        <li><span data-lang-zh>選用的 iCloud 同步；繁體中文、英文、日文介面</span><span data-lang-en>Optional iCloud sync; Traditional Chinese, English and Japanese interface</span></li>
+      </ul>
+    </article>
+  </main>
+</div>
+
+<footer class="site">
+  <div class="wrap foot">
+    <a href="../" class="logo"><img src="../icon.png" alt=""><span class="app-name" data-lang-zh>名片夾 CardVault</span><span class="app-name" data-lang-en>CardVault</span></a>
+    <div class="foot-links">
+      <a href="../#features"><span data-lang-zh>功能</span><span data-lang-en>Features</span></a>
+      <a href="../#pricing"><span data-lang-zh>定價</span><span data-lang-en>Pricing</span></a>
+      <a href="../changelog/"><span data-lang-zh>更新紀錄</span><span data-lang-en>Changelog</span></a>
+      <a href="../support/"><span data-lang-zh>支援</span><span data-lang-en>Support</span></a>
+      <a href="../privacy/"><span data-lang-zh>隱私權</span><span data-lang-en>Privacy</span></a>
+      <a href="mailto:abelhu.tw@gmail.com"><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact</span></a>
+      <button class="lang" data-lang-zh onclick="setLang('en')">English</button>
+      <button class="lang" data-lang-en onclick="setLang('zh')">中文</button>
+    </div>
+    <div class="foot-copy">© 2026 XUAN-CHEN HU · <span data-lang-zh>名片夾 CardVault</span><span data-lang-en>CardVault</span></div>
+  </div>
+</footer>
+
+<script src="../assets/site.js"></script>
+</body>
+</html>

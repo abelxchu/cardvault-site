@@ -1,0 +1,8 @@
+# Cloudflare Pages 轉址：舊網址（GitHub Pages 時代、App Store Connect 曾填過）→ 新網址
+/privacy.html      /privacy/              301
+/support.html      /support/              301
+/en                /?lang=en              301
+/en/               /?lang=en              301
+/en/index.html     /?lang=en              301
+/en/privacy.html   /privacy/?lang=en      301
+/en/support.html   /support/?lang=en      301

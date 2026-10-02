@@ -1,77 +1,334 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
+<!doctype html>
+<html lang="zh-Hant" data-title-en="CardVault — Scan business cards, keep them on your phone">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>名片夾 CardVault</title>
-  <meta name="description" content="名片夾（CardVault）：離線名片掃描 App，資料完全留在你的手機。">
-  <style>
-    :root {
-      --brand-deep: #16224a; --brand: #3557a8; --brand-light: #7fb0e6;
-      --tint: #eef2fb; --ink: #14182a; --muted: #5b6178; --hairline: #e2e7f5;
-      --bg: #ffffff; --hero-text: #eef2fb; --hero-muted: #aebbe0; --card: #ffffff;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --brand-deep: #0c1224; --brand: #7fa6e8; --brand-light: #9dc6f2;
-        --tint: #161d38; --ink: #eef1fa; --muted: #a6acc4; --hairline: #262f52;
-        --bg: #0c1224; --hero-text: #eef2fb; --hero-muted: #8f9dc7; --card: #141d33;
-      }
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang TC", "Noto Sans TC", sans-serif;
-      line-height: 1.8; -webkit-font-smoothing: antialiased;
-    }
-    .hero { background: var(--brand-deep); color: var(--hero-text); padding: 40px 24px 72px; }
-    .container { max-width: 720px; margin: 0 auto; }
-    .hero-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 64px; }
-    .app-badge { display: inline-flex; align-items: center; gap: 12px; font-weight: 700; font-size: 19px; }
-    .app-badge img { width: 40px; height: 40px; border-radius: 10px; display: block; }
-    .lang-switch {
-      font-size: 14px; font-weight: 600; color: var(--hero-muted); text-decoration: none;
-      border: 1px solid currentColor; border-radius: 999px; padding: 5px 14px; opacity: 0.9;
-    }
-    .hero h1 { font-size: clamp(30px, 6vw, 46px); line-height: 1.3; margin: 0 0 16px; font-weight: 500; }
-    .hero h1 strong { font-weight: 800; }
-    .hero p { font-size: 17px; color: var(--hero-muted); margin: 0; max-width: 460px; }
-    .links { max-width: 720px; margin: -40px auto 0; padding: 0 24px 64px; display: grid; gap: 16px; }
-    @media (min-width: 560px) { .links { grid-template-columns: 1fr 1fr; } }
-    .nav-card {
-      background: var(--card); border: 1px solid var(--hairline); border-radius: 16px;
-      padding: 24px; text-decoration: none; color: var(--ink); display: block;
-    }
-    .nav-card:hover { border-color: var(--brand); }
-    .nav-card .k { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; color: var(--brand); margin: 0 0 6px; }
-    .nav-card h2 { font-size: 20px; font-weight: 700; margin: 0 0 6px; }
-    .nav-card p { font-size: 14px; color: var(--muted); margin: 0; }
-    footer { text-align: center; color: var(--muted); font-size: 14px; padding: 8px 24px 48px; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>名片夾 CardVault — 掃描名片，資料留在你手機裡</title>
+<script>(function(){var q,l;try{q=new URLSearchParams(location.search).get('lang');}catch(e){}try{if(q==='en'||q==='zh'){localStorage.setItem('cardvault_lang',q);}l=localStorage.getItem('cardvault_lang');}catch(e){l=q;}if(!l){l=(navigator.language||'').toLowerCase().indexOf('zh')===0?'zh':'en';}document.documentElement.lang=(l==='en')?'en':'zh-Hant';})();</script>
+<meta name="description" content="名片夾（CardVault）：拍一張，名片就數位化。姓名、公司、職稱、電話自動辨識，全程在你的裝置上完成——免帳號、不上傳、飛航模式也能用。">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b1020" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="icon.png" type="image/png">
+<link rel="apple-touch-icon" href="icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="名片夾 CardVault — 掃描名片，資料留在你手機裡">
+<meta property="og:description" content="拍一張，名片就數位化。離線辨識、QR 交換、標籤整理，免帳號，資料只在你的裝置與你自己的 iCloud。">
+<meta property="og:image" content="icon.png">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
-  <div class="hero">
-    <div class="container">
-      <div class="hero-top">
-        <div class="app-badge"><img id="app-icon" src="data:image/png;base64,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" alt=""><span class="app-name">名片夾 CardVault</span></div>
-        <a class="lang-switch" href="en/">EN</a>
-      </div>
-      <h1>把名片<strong>數位化</strong>，<br>資料留在你手機裡</h1>
-      <p>離線掃描、離線辨識，免註冊、不上傳、不追蹤。你的人脈資料完全屬於你。</p>
+
+<!-- ============ HEADER ============ -->
+<header class="site" id="siteHeader">
+  <div class="wrap nav">
+    <a href="#top" class="logo"><img src="icon.png" alt=""><span class="app-name" data-lang-zh>名片夾 CardVault</span><span class="app-name" data-lang-en>CardVault</span></a>
+    <div class="nav-right">
+      <a class="btn btn-dark btn-getapp" href="https://apps.apple.com/app/id6790775244" data-appstore>
+        <svg class="apple" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="txt" data-lang-zh>取得 App</span><span class="txt" data-lang-en>Get the app</span>
+      </a>
+      <button class="btn btn-ghost btn-menu" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <span class="txt" data-lang-zh>選單</span><span class="txt" data-lang-en>Menu</span>
+      </button>
     </div>
   </div>
-  <div class="links">
-    <a class="nav-card" href="privacy.html">
-      <p class="k">隱私</p>
-      <h2>隱私權政策</h2>
-      <p>我們如何（不）處理你的資料。</p>
-    </a>
-    <a class="nav-card" href="support.html">
-      <p class="k">支援</p>
-      <h2>技術支援</h2>
-      <p>常見問題與聯絡方式。</p>
-    </a>
+</header>
+
+<!-- ============ MENU OVERLAY ============ -->
+<div class="menu-scrim" id="menuScrim"></div>
+<div class="menu-panel" id="menuPanel" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-head">
+    <span data-lang-zh>選單</span><span data-lang-en>Menu</span>
+    <button class="menu-x" id="menuClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
   </div>
-  <footer>© 2026 <span class="app-name">名片夾 CardVault</span></footer>
+  <nav>
+    <a href="#top"><span data-lang-zh>總覽</span><span data-lang-en>Overview</span></a>
+    <a href="#features"><span data-lang-zh>功能</span><span data-lang-en>Features</span></a>
+    <a href="#screens"><span data-lang-zh>畫面一覽</span><span data-lang-en>Screenshots</span></a>
+    <a href="#pricing"><span data-lang-zh>定價</span><span data-lang-en>Pricing</span></a>
+    <a href="changelog/"><span data-lang-zh>更新紀錄</span><span data-lang-en>Changelog</span></a>
+  </nav>
+  <div class="menu-foot">
+    <div class="menu-foot-links">
+      <a href="support/"><span data-lang-zh>支援</span><span data-lang-en>Support</span></a>
+      <a href="privacy/"><span data-lang-zh>隱私權</span><span data-lang-en>Privacy</span></a>
+      <a href="mailto:abelhu.tw@gmail.com"><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact</span></a>
+    </div>
+    <button class="lang" data-lang-zh onclick="setLang('en')">English</button>
+    <button class="lang" data-lang-en onclick="setLang('zh')">中文</button>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<a id="top"></a>
+<main class="hero wrap">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="badge"><span class="dot"></span><span data-lang-zh>名片掃描 · 離線辨識</span><span data-lang-en>Business card scanner · Works offline</span></span>
+      <h1 class="hero-title">
+        <span data-lang-zh>拍一張，<br>名片就<br><em>數位化。</em></span>
+        <span data-lang-en>Snap a card.<br>It's instantly<br><em>digital.</em></span>
+      </h1>
+      <p class="hero-sub">
+        <span data-lang-zh>把桌上那疊名片，變成乾淨、可搜尋的通訊錄。姓名、公司、職稱、電話自動辨識歸檔，全程在你的裝置上完成——免帳號、不上傳，飛航模式也能用。</span>
+        <span data-lang-en>Turn the stack of cards on your desk into a clean, searchable address book. Names, companies, titles and phone numbers are recognized and filed automatically — all on your device. No account, no upload, works in Airplane Mode.</span>
+      </p>
+      <div class="hero-cta">
+        <a class="appstore" href="https://apps.apple.com/app/id6790775244" data-appstore>
+          <svg class="apple" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="lbl"><small data-lang-zh>下載</small><small data-lang-en>Download on the</small><b>App Store</b></span>
+        </a>
+        <span class="cta-note"><span data-lang-zh>免費下載 · 無需註冊帳號 · iPhone 與 iPad</span><span data-lang-en>Free download · No account · iPhone &amp; iPad</span></span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="blob"></div>
+      <div class="float-chip">
+        <div class="k"><span data-lang-zh>辨識需要網路嗎？</span><span data-lang-en>Needs internet?</span></div>
+        <div class="v"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh>完全不用</span><span data-lang-en>Not at all</span></div>
+      </div>
+      <img class="phone-mockup" data-lang-zh src="img/hero-zh.webp" alt="名片夾的名片牆畫面：每張名片依公司配色，疊成 Wallet 風格的卡牆" width="600" height="1307">
+      <img class="phone-mockup" data-lang-en src="img/hero-en.webp" alt="CardVault's card wall: each card colored by company, stacked Wallet-style" width="600" height="1307">
+    </div>
+  </div>
+</main>
+
+<!-- ============ BIG FEATURE: scan ============ -->
+<section id="scan">
+  <div class="wrap">
+    <div class="feature-big">
+      <div>
+        <div class="eyebrow" data-lang-zh>掃描建檔</div><div class="eyebrow" data-lang-en>Scan &amp; file</div>
+        <h3><span data-lang-zh>對準名片，剩下的交給它。</span><span data-lang-en>Point at a card. It handles the rest.</span></h3>
+        <p><span data-lang-zh>自動偵測邊框、校正透視，正反面一次保存。文字辨識在你的裝置上完成；在支援 Apple Intelligence 的裝置上，還會用裝置端 AI 判斷姓名、公司與職稱，辨識更準確。</span>
+           <span data-lang-en>Edges are detected and perspective corrected, front and back saved together. Text recognition runs on your device — and on devices that support Apple Intelligence, on-device AI picks out names, companies and titles even more accurately.</span></p>
+        <div class="steps">
+          <div class="step"><span class="n">1</span><span class="stx"><b data-lang-zh>拍名片</b><b data-lang-en>Scan the card</b><span data-lang-zh>用相機掃描，或從相簿匯入；正反面可一起存</span><span data-lang-en>With the camera or from your photos — front and back together</span></span></div>
+          <div class="step"><span class="n">2</span><span class="stx"><b data-lang-zh>自動辨識欄位</b><b data-lang-en>Fields fill themselves</b><span data-lang-zh>姓名、公司、職稱、電話（含分機）、Email、網址、地址、LINE ID、統編</span><span data-lang-en>Name, company, title, phone (with extension), email, website, address, LINE ID</span></span></div>
+          <div class="step"><span class="n">3</span><span class="stx"><b data-lang-zh>確認後存檔</b><b data-lang-en>Check and save</b><span data-lang-zh>每一欄都能改；也能直接加入 iPhone 聯絡人</span><span data-lang-en>Edit any field, or add it straight to iPhone Contacts</span></span></div>
+        </div>
+      </div>
+      <div class="scan-demo" aria-hidden="true">
+        <div class="paper-card">
+          <i class="corner c1"></i><i class="corner c2"></i><i class="corner c3"></i><i class="corner c4"></i>
+          <div class="co">Example Lab</div>
+          <div><div class="nm">Amy Hsu</div><div class="tt">Product Designer</div></div>
+          <div class="ct">amy.hsu@examplelab.com<br>examplelab.com</div>
+        </div>
+        <div class="scan-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg><span data-lang-zh>裝置上辨識</span><span data-lang-en>Recognized on-device</span></div>
+        <div class="fields">
+          <div class="f"><small data-lang-zh>姓名</small><small data-lang-en>Name</small><span>Amy Hsu</span></div>
+          <div class="f"><small data-lang-zh>公司</small><small data-lang-en>Company</small><span>Example Lab</span></div>
+          <div class="f"><small data-lang-zh>職稱</small><small data-lang-en>Title</small><span>Product Designer</span></div>
+          <div class="f"><small>Email</small><span>amy.hsu@examplelab.com</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE GRID ============ -->
+<section id="features">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-lang-zh>功能</div><div class="eyebrow" data-lang-en>Features</div>
+      <h2 class="sec-title"><span data-lang-zh>從一張名片，到整本人脈。</span><span data-lang-en>From one card to your whole network.</span></h2>
+      <p class="sec-sub"><span data-lang-zh>掃描只是開始。整理、搜尋、交換、備份，名片夾用 iOS 原生的方式幫你顧好每一張。</span><span data-lang-en>Scanning is just the start. Organize, search, exchange and back up — CardVault looks after every card, the native iOS way.</span></p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg></div>
+        <h3><span data-lang-zh>標籤、收藏、典藏</span><span data-lang-en>Tags, favorites, archive</span></h3>
+        <p><span data-lang-zh>依日期、姓名或公司排序，用標籤分類。用不到的名片可以典藏、不必刪除；長按就能多選，一次整理好幾張。</span><span data-lang-en>Sort by date, name or company and group with tags. Archive cards you no longer need instead of deleting them, and long-press to tidy up several at once.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></div>
+        <h3><span data-lang-zh>系統搜尋找得到人</span><span data-lang-en>Find anyone from Search</span></h3>
+        <p><span data-lang-zh>不用打開 App，從 iPhone 的系統搜尋（Spotlight）就能找到任何人。可用清單瀏覽，或 Wallet 風格的名片牆。</span><span data-lang-en>Find anyone straight from iPhone system search (Spotlight), without opening the app. Browse as a list or a Wallet-style card wall.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 17h4v4h-4"/></svg></div>
+        <h3><span data-lang-zh>我的名片 · QR 交換</span><span data-lang-en>My Card · QR exchange</span></h3>
+        <p><span data-lang-zh>建立自己的數位名片，出示 QR code，對方用手機相機一掃就把你加進聯絡人，不用裝 App。</span><span data-lang-en>Create your own digital card and show its QR code — anyone can scan it with their phone camera to add you to their contacts, no app needed.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/><circle cx="6.5" cy="12.5" r="1.5"/><path d="M12 2a10 10 0 0 0 0 20c1.1 0 2-.9 2-2 0-.5-.2-1-.5-1.3-.3-.4-.5-.8-.5-1.3 0-1.1.9-2 2-2h2.4A5.6 5.6 0 0 0 22 9.8C22 5.5 17.5 2 12 2z"/></svg></div>
+        <h3><span data-lang-zh>卡面樣式全免費</span><span data-lang-en>Card styles, all free</span></h3>
+        <p><span data-lang-zh>經典、漸層、花紋、玻璃四種樣式，字體、配色、大頭照與排版隨你調；一鍵做成社群分享圖，可調背景與比例。</span><span data-lang-en>Classic, Gradient, Pattern and Glass styles, plus your own font, colors, photo and layout. Turn it into a social-ready image with adjustable background and ratio.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 17.5A4.5 4.5 0 0 0 18 9h-1.3A7 7 0 1 0 5 15.7"/><path d="M12 12v9M8.5 17.5 12 21l3.5-3.5"/></svg></div>
+        <h3><span data-lang-zh>iCloud 同步 · 無需帳號</span><span data-lang-en>iCloud sync · No account</span></h3>
+        <p><span data-lang-zh>選用的 iCloud 同步，只把名片存到你自己的私人 iCloud，在 iPhone 與 iPad 之間同步；設定頁隨時看得到同步狀態。</span><span data-lang-en>Optional iCloud sync keeps cards only in your own private iCloud, synced between your iPhone and iPad — with sync status always visible in Settings.</span></p>
+      </div>
+      <div class="feat">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5M12 15V3"/></svg></div>
+        <h3><span data-lang-zh>通訊錄與匯出</span><span data-lang-en>Contacts &amp; export</span></h3>
+        <p><span data-lang-zh>把名片加入 iPhone 聯絡人——只寫入你選的那一張。隨時匯出完整的 vCard／CSV 備份，也能匯回來。</span><span data-lang-en>Add a card to iPhone Contacts — only the one you choose. Export a complete vCard / CSV backup anytime, and import it back.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCREENSHOTS ============ -->
+<section id="screens">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow" data-lang-zh>畫面一覽</div><div class="eyebrow" data-lang-en>Screenshots</div>
+      <h2 class="sec-title"><span data-lang-zh>原生質感，淺色深色都好看。</span><span data-lang-en>Native design, made for iPhone and iPad.</span></h2>
+    </div>
+    <div class="shots" tabindex="0" aria-label="Screenshots">
+      <figure data-lang-zh><img src="img/shot-zh-1.webp" alt="掃描名片，秒變數位卡片" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-zh><img src="img/shot-zh-2.webp" alt="清單、收藏、標籤，自由整理" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-zh><img src="img/shot-zh-3.webp" alt="一張名片，資訊全到齊" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-zh><img src="img/shot-zh-4.webp" alt="我的名片，掃碼即存" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-zh><img src="img/shot-zh-5.webp" alt="支援個人化調整名片樣式" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-zh><img src="img/shot-zh-6.webp" alt="一鍵分享給客戶與商業夥伴" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-en><img src="img/shot-en-1.webp" alt="Scan a card and it's instantly digital" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-en><img src="img/shot-en-2.webp" alt="Organize with lists, favorites and tags" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-en><img src="img/shot-en-3.webp" alt="Every detail of a card in one place" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-en><img src="img/shot-en-4.webp" alt="My Card with a QR code to scan" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-en><img src="img/shot-en-5.webp" alt="Customize your card style" width="560" height="1212" loading="lazy"></figure>
+      <figure data-lang-en><img src="img/shot-en-6.webp" alt="Share your card in one tap" width="560" height="1212" loading="lazy"></figure>
+    </div>
+    <p class="shots-hint"><span data-lang-zh>← 左右滑動看更多 →</span><span data-lang-en>← Swipe for more →</span></p>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head" style="text-align:center;margin:0 auto 40px;">
+      <div class="eyebrow" data-lang-zh>定價</div><div class="eyebrow" data-lang-en>Pricing</div>
+      <h2 class="sec-title"><span data-lang-zh>免費開始，付一次就好。</span><span data-lang-en>Start free. Pay once, if ever.</span></h2>
+      <p class="sec-sub" style="margin:0 auto;"><span data-lang-zh>所有功能免費版都有。名片超過 15 張時，一次買斷 Pro 解鎖無限——不訂閱。</span><span data-lang-en>Every feature is in the free plan. When you pass 15 cards, a one-time Pro purchase unlocks unlimited — no subscription.</span></p>
+    </div>
+    <div class="price-grid">
+      <div class="plan free">
+        <div class="pname" data-lang-zh>免費</div><div class="pname" data-lang-en>Free</div>
+        <div class="price"><b>NT$0</b></div>
+        <p class="psub"><span data-lang-zh>下載即用，無需帳號</span><span data-lang-en>Download and go, no account</span></p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh>最多 15 張名片</span><span data-lang-en>Up to 15 cards</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh>掃描、離線辨識、裝置端 AI</span><span data-lang-en>Scanning, offline recognition, on-device AI</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh>我的名片、全部卡面樣式</span><span data-lang-en>My Card and every card style</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh>iCloud 同步、匯入匯出備份</span><span data-lang-en>iCloud sync, backup import &amp; export</span></li>
+        </ul>
+        <a class="cta" href="https://apps.apple.com/app/id6790775244" data-appstore><span data-lang-zh>免費下載</span><span data-lang-en>Download free</span></a>
+      </div>
+      <div class="plan pro">
+        <span class="tag">Pro</span>
+        <div class="pname">CardVault Pro</div>
+        <div class="price"><b>NT$150</b><span class="per" data-lang-zh>一次買斷</span><span class="per" data-lang-en>one-time</span></div>
+        <p class="psub"><span data-lang-zh>付一次、永久有效 · 沒有循環扣款</span><span data-lang-en>About US$5 · Pay once, yours forever</span></p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh><strong>無限名片張數</strong>，想收多少都行</span><span data-lang-en><strong>Unlimited cards</strong> — keep as many as you like</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh>免費版的全部功能</span><span data-lang-en>Everything in Free</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh>不是訂閱，不會每月扣款</span><span data-lang-en>Not a subscription — no monthly charges</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-lang-zh>綁定 Apple ID，換機可恢復購買</span><span data-lang-en>Tied to your Apple ID — restore on a new device</span></li>
+        </ul>
+        <a class="cta" href="https://apps.apple.com/app/id6790775244" data-appstore><span data-lang-zh>取得 App</span><span data-lang-en>Get the app</span></a>
+      </div>
+    </div>
+    <p class="price-note"><span data-lang-zh>購買透過 App Store 處理、綁定你的 Apple ID，不需另外註冊。超過 15 張後，既有名片照常讀取與匯出，只是要解鎖 Pro 才能再新增。</span><span data-lang-en>Purchases are handled by the App Store and tied to your Apple ID — no separate account. Past 15 cards, your existing cards stay readable and exportable; Pro is only needed to add more.</span></p>
+  </div>
+</section>
+
+<!-- ============ PRIVACY STRIP ============ -->
+<section>
+  <div class="wrap">
+    <div class="privacy-strip">
+      <div class="eyebrow" data-lang-zh>隱私優先</div><div class="eyebrow" data-lang-en>Privacy first</div>
+      <h2><span data-lang-zh>你的人脈，只屬於你。</span><span data-lang-en>Your network stays yours.</span></h2>
+      <p><span data-lang-zh>名片夾沒有帳號、沒有伺服器。你的名片只存在自己的裝置，和你選擇開啟的私人 iCloud。詳見<a href="privacy/">隱私權政策</a>。</span>
+         <span data-lang-en>CardVault has no accounts and no servers. Your cards live only on your device — and in your own private iCloud, if you turn sync on. See the <a href="privacy/">Privacy Policy</a>.</span></p>
+      <div class="privacy-points">
+        <div class="pp">
+          <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 17.5h2"/></svg><span data-lang-zh>全程在裝置上</span><span data-lang-en>All on-device</span></b>
+          <span data-lang-zh>掃描、文字辨識與 AI 判斷都在你的裝置上完成，飛航模式也能用。</span><span data-lang-en>Scanning, text recognition and AI all run on your device — even in Airplane Mode.</span>
+        </div>
+        <div class="pp">
+          <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg><span data-lang-zh>不用註冊帳號</span><span data-lang-en>No account required</span></b>
+          <span data-lang-zh>不收集姓名、Email 或任何個人資料，打開就能掃。</span><span data-lang-en>No name, email or personal data collected. Just open and scan.</span>
+        </div>
+        <div class="pp">
+          <b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.4-3 8.4-7 9.5-4-1.1-7-5.1-7-9.5V6l7-3z"/><path d="M9.2 12.2l2 2 3.6-4"/></svg><span data-lang-zh>無追蹤、無分析</span><span data-lang-en>No tracking, no analytics</span></b>
+          <span data-lang-zh>沒有任何第三方追蹤、分析或廣告，開發者看不到你的名片。</span><span data-lang-en>No third-party tracking, analytics or ads. The developer can't see your cards.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap faq-wrap">
+    <div class="sec-head" style="text-align:center;margin:0 auto 36px;">
+      <h2 class="sec-title" data-lang-zh>常見問題</h2>
+      <h2 class="sec-title" data-lang-en>Questions</h2>
+    </div>
+    <div class="faq">
+      <details class="qa" open>
+        <summary><span><span data-lang-zh>掃描名片需要連網路嗎？</span><span data-lang-en>Does scanning need an internet connection?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>不需要。文字辨識與欄位判斷全部在你的裝置上離線完成，飛航模式也能用。在支援 Apple Intelligence 的裝置上，會改用裝置端 AI 判斷姓名、公司與職稱，同樣不連網、資料不離開手機。</span><span data-lang-en>No. Text recognition and field detection run entirely offline on your device — even in Airplane Mode. On devices that support Apple Intelligence, on-device AI identifies names, companies and titles; it doesn't go online either, and your data never leaves your phone.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>需要註冊帳號嗎？</span><span data-lang-en>Do I need an account?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>不用。沒有帳號、不必填 Email，下載打開就能掃。想在 iPhone 與 iPad 之間同步，開啟 iCloud 同步即可，用的是你自己的 Apple ID。</span><span data-lang-en>No. There's no account and no email to fill in — just download and scan. To sync between your iPhone and iPad, turn on iCloud sync; it uses your own Apple ID.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>我的名片資料存在哪裡？</span><span data-lang-en>Where is my card data stored?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>預設只存在你的裝置上。開啟 iCloud 同步後，會另存一份到你自己的私人 iCloud——仍然不是開發者的伺服器，開發者無法讀取。詳見<a href="privacy/">隱私權政策</a>。</span><span data-lang-en>On your device only, by default. With iCloud sync on, a copy is kept in your own private iCloud — still not a developer server, and the developer can't read it. See the <a href="privacy/">Privacy Policy</a>.</span></div>
+      </details>
+      <details class="qa">
+        <summary><span><span data-lang-zh>名片夾免費嗎？Pro 是訂閱嗎？</span><span data-lang-en>Is CardVault free? Is Pro a subscription?</span></span><svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="ans"><span data-lang-zh>免費下載，所有功能都能用，最多可存 15 張名片。想收更多時，Pro 一次買斷 NT$150 解鎖無限張數——不是訂閱，不會每月扣款。詳見上方<a href="#pricing">定價</a>。</span><span data-lang-en>It's free to download with every feature included, for up to 15 cards. To keep more, Pro is a one-time purchase (NT$150, about US$5) that unlocks unlimited cards — not a subscription. See <a href="#pricing">Pricing</a> above.</span></div>
+      </details>
+    </div>
+    <p class="faq-more"><a href="support/"><span data-lang-zh>看所有常見問題與支援 →</span><span data-lang-en>All questions &amp; support →</span></a></p>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta" id="get">
+  <div class="wrap">
+    <h2><span data-lang-zh>把那疊名片，收進口袋。</span><span data-lang-en>Put that stack of cards in your pocket.</span></h2>
+    <p><span data-lang-zh>免費下載，無需註冊。從第一張名片開始。</span><span data-lang-en>Free to download, no account needed. Start with a single card.</span></p>
+    <div class="hero-cta">
+      <a class="appstore" href="https://apps.apple.com/app/id6790775244" data-appstore>
+        <svg class="apple" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+        <span class="lbl"><small data-lang-zh>下載</small><small data-lang-en>Download on the</small><b>App Store</b></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap foot">
+    <a href="#top" class="logo"><img src="icon.png" alt=""><span class="app-name" data-lang-zh>名片夾 CardVault</span><span class="app-name" data-lang-en>CardVault</span></a>
+    <div class="foot-links">
+      <a href="#features"><span data-lang-zh>功能</span><span data-lang-en>Features</span></a>
+      <a href="#pricing"><span data-lang-zh>定價</span><span data-lang-en>Pricing</span></a>
+      <a href="changelog/"><span data-lang-zh>更新紀錄</span><span data-lang-en>Changelog</span></a>
+      <a href="support/"><span data-lang-zh>支援</span><span data-lang-en>Support</span></a>
+      <a href="privacy/"><span data-lang-zh>隱私權</span><span data-lang-en>Privacy</span></a>
+      <a href="mailto:abelhu.tw@gmail.com"><span data-lang-zh>聯絡我們</span><span data-lang-en>Contact</span></a>
+      <button class="lang" data-lang-zh onclick="setLang('en')">English</button>
+      <button class="lang" data-lang-en onclick="setLang('zh')">中文</button>
+    </div>
+    <div class="foot-copy">© 2026 XUAN-CHEN HU · <span data-lang-zh>名片夾 CardVault</span><span data-lang-en>CardVault</span></div>
+  </div>
+</footer>
+
+<script src="assets/site.js"></script>
 </body>
 </html>
